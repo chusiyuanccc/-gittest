@@ -11,14 +11,14 @@
                 class="demo-form-inline"
               >
                 <el-form-item style="float:left;">
-                  <h3>Building</h3>
+                  <h3>ElevatorButton</h3>
                 </el-form-item>
-                <el-form-item style='float: left;height: 40px;' class='search'>
+                <!-- <el-form-item style='float: left;height: 40px;' class='search'>
                   <el-input v-model="formInline.seek" placeholder="Name" style='margin-left: 15px;width: 256px;height: 40px;line-height: 40px;'></el-input>
                 </el-form-item>
                 <el-form-item style='float:left;height: 35px;'>
                   <el-button type="primary" @click="onSubmit" style='height:40px;border:0;padding: 0 10px;'>Search</el-button>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item style="float:right;">
                   <el-button
                     type="primary"

@@ -225,6 +225,18 @@ const router = new Router({
 							path: '/elevator',
 							component: () => import('./views/test/elevator'),
 						},
+						{
+							path: '/filter',
+							component: () => import('./views/test/filter'),
+						},
+						{
+							path: '/elevatorButton',
+							component: () => import('./views/test/elevatorButton'),
+						},
+						{
+							path: '/print',
+							component: () => import('./views/test/print'),
+						},
 			],
 		},
 

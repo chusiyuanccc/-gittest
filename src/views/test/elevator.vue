@@ -11,14 +11,14 @@
                 class="demo-form-inline"
               >
                 <el-form-item style="float:left;">
-                  <h3>Real extate</h3>
+                  <h3>Elevator</h3>
                 </el-form-item>
-                <!-- <el-form-item style='float: left;height: 40px;' class='search'>
+                <el-form-item style='float: left;height: 40px;' class='search'>
                   <el-input v-model="formInline.seek" placeholder="Name" style='margin-left: 15px;width: 256px;height: 40px;line-height: 40px;'></el-input>
                 </el-form-item>
                 <el-form-item style='float:left;height: 35px;'>
                   <el-button type="primary" @click="onSubmit" style='height:40px;border:0;padding: 0 10px;'>Search</el-button>
-                </el-form-item> -->
+                </el-form-item>
                 <el-form-item style="float:right;">
                   <el-button
                     type="primary"
@@ -84,6 +84,22 @@
             :min-width="190"
           >
             <template slot-scope="scope">
+              <!-- <el-button
+                @click="modify(scope.row)"
+                type="danger"
+                size="small"
+                style="margin-right: 20px;"
+                plain
+                >button setting</el-button
+              >
+              <el-button
+                @click="modify(scope.row)"
+                type="danger"
+                size="small"
+                style="margin-right: 20px;"
+                plain
+                >QR clone</el-button
+              > -->
               <el-button
                 @click="modify(scope.row)"
                 type="danger"

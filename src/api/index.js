@@ -13,7 +13,9 @@ import {
 // 配置API接口地址
 // var root = 'https://www.elyseesshop.co/9f286966-2a2f-11ea-b04e-acde48001122'   //李治1
 var root = '../../data'
+//  var root = 'http://192.168.8.148:8080'  
 // var root = '/api'
+
 
 // 引用axios
 var axios = require('axios')

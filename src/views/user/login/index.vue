@@ -189,7 +189,7 @@
 						
 						
 						//开始
-						/*
+						// /*
 						this.$api.post('/oauth/token',
 
 						bodyFormData
@@ -227,7 +227,8 @@
 							this.$nprogress.done()
 							e.preventDefault()
 
-						}); */
+						}); 
+						// */
 
 
 						//test

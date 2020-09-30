@@ -75,106 +75,179 @@
         "Staffs",
         "Miscellaneous"
       ]
-      // this.menuData =
-      // [
-      //   {
-      //     icon: "el-icon-menu",
-      //     key: "elysDashboard",
-      //     title: "Dashboard",
-      //     url: "/elysDashboard"
-      //   },
-      //   {
-      //     title: 'Purchase',
-      //     key: 'Purchase',
-      //     url: '/elysPurchase',
-      //     icon: 'el-icon-shopping-cart-2'
-      //   },
-      //   {
-      //     title: 'Order',
-      //     key: 'Order',
-      //     url: '/elysOrder',
-      //     icon: 'el-icon-tickets'
-      //   },
-      //   {
-      //     title: 'Invoice',
-      //     key: 'Invoice',
-      //     icon: 'el-icon-s-ticket',
-      //     url:'/elysInvoice',
-      //   },
-      //   {
-      //     title: 'Expense',
-      //     key: 'Expense',
-      //     icon: 'el-icon-coin',
-      //     url:'/elysExpense',
-      //   },
-      //   {
-      //     title: 'Customer',
-      //     key: 'Customer',
-      //     url: '/elysCustomer',
-      //     icon: 'el-icon-s-custom'
-      //   },
-      //   {
-      //     title: 'User Group Activity',
-      //     key: 'User Group Activity',
-      //     icon: 'el-icon-message',
-      //     url: "/elysDashboard"
-      //   },
-      //   {
-      //     title: 'User',
-      //     key: 'User',
-      //     icon: 'el-icon-user',
-      //     children: [{
-      //         title: 'User',
-      //         key: 'User',
-      //         url: '/elysUser',
-      //         icon: 'el-icon-user',
-      //       },
-      //       {
-      //         title: 'Group Setting',
-      //         key: 'Group Setting',
-      //         url: '/elysGroup',
-      //         icon: 'el-icon-setting',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: 'System Settings',
-      //     key: 'System Settings',
-      //     icon: 'el-icon-setting',
-      //     children: [
-      //         {
-      //           title: 'Brand',
-      //           key: 'Brand',
-      //           icon: 'el-icon-star-off',
-      //           url:'/elysBrand',
-      //         },
-      //         {
-      //           title: 'Category',
-      //           key: 'Category',
-      //           icon: 'el-icon-document-copy',
-      //           url:'/elysCategory',
-      //         },
-      //         {
-      //           title: 'City',
-      //           key: 'City',
-      //           icon: 'el-icon-map-location',
-      //           url:'/elysCity',
-      //         },
-      //         {
-      //           title: 'Order Status',
-      //           key: 'Order Status',
-      //           url: '/elysOrderStatus',
-      //           icon: 'el-icon-s-operation'
-      //         },
-      //         {
-      //           title: 'Warehouse',
-      //           key: 'Warehouse',
-      //           icon: 'el-icon-house',
-      //           url:'/elysWarehouse',
-      //         },
-      //     ],
-      //   },
-      // ]
+      this.menuData =
+      [ 
+        {
+          icon: "el-icon-menu",
+          key: "elysDashboard",
+          title: "Home",
+          url: "/elysDashboard"
+        },
+        {
+		      icon: "el-icon-menu",
+	      	key: "Vendor",
+		      title: "Vendor",
+		      children:[
+			  {
+				icon: "el-icon-menu",
+				key: "real extate",
+				title: "Real extate",
+				url: "/realextate"
+			  },
+			  {
+				icon: "el-icon-menu",
+				key: "Building",
+				title: "Building",
+				url: "/building"
+			  },
+			  {
+				icon: "el-icon-menu",
+				key: "Elevator",
+				title: "Elevator",
+				url: "/elevator"
+        },
+        {
+				icon: "el-icon-menu",
+				key: "ElevatorButton",
+				title: "ElevatorButton",
+				url: "/elevatorButton"
+        },
+		    ]
+        },
+        {
+          icon: "el-icon-menu",
+          key: "filter",
+          title: "filter",
+          url: "/filter"
+        },
+        // {
+		    // icon: "el-icon-menu",
+		    // key: "print",
+		    // title: "print",
+		    // url: "/print"
+	      // },
+        // {
+        //   icon: "el-icon-menu",
+        //   key: "Home",
+        //   title: "Home",
+        //   url: "/elysUserGroupActivity"
+        // },
+        // {
+        //   icon: "el-icon-menu",
+        //   key: "real extate",
+        //   title: "Real extate",
+        //   url: "/realextate"
+        // },
+        // {
+        //   icon: "el-icon-menu",
+        //   key: "Building",
+        //   title: "Building",
+        //   url: "/building"
+        // },
+        // {
+        //   icon: "el-icon-menu",
+        //   key: "Elevator",
+        //   title: "Elevator",
+        //   url: "/elevator"
+        // }
+        // {
+        //   icon: "el-icon-menu",
+        //   key: "elysDashboard",
+        //   title: "Dashboard",
+        //   url: "/elysDashboard"
+        // },
+        // {
+        //   title: 'Purchase',
+        //   key: 'Purchase',
+        //   url: '/elysPurchase',
+        //   icon: 'el-icon-shopping-cart-2'
+        // },
+        // {
+        //   title: 'Order',
+        //   key: 'Order',
+        //   url: '/elysOrder',
+        //   icon: 'el-icon-tickets'
+        // },
+        // {
+        //   title: 'Invoice',
+        //   key: 'Invoice',
+        //   icon: 'el-icon-s-ticket',
+        //   url:'/elysInvoice',
+        // },
+        // {
+        //   title: 'Expense',
+        //   key: 'Expense',
+        //   icon: 'el-icon-coin',
+        //   url:'/elysExpense',
+        // },
+        // {
+        //   title: 'Customer',
+        //   key: 'Customer',
+        //   url: '/elysCustomer',
+        //   icon: 'el-icon-s-custom'
+        // },
+        // {
+        //   title: 'User Group Activity',
+        //   key: 'User Group Activity',
+        //   icon: 'el-icon-message',
+        //   url: "/elysDashboard"
+        // },
+        // {
+        //   title: 'User',
+        //   key: 'User',
+        //   icon: 'el-icon-user',
+        //   children: [{
+        //       title: 'User',
+        //       key: 'User',
+        //       url: '/elysUser',
+        //       icon: 'el-icon-user',
+        //     },
+        //     {
+        //       title: 'Group Setting',
+        //       key: 'Group Setting',
+        //       url: '/elysGroup',
+        //       icon: 'el-icon-setting',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'System Settings',
+        //   key: 'System Settings',
+        //   icon: 'el-icon-setting',
+        //   children: [
+        //       {
+        //         title: 'Brand',
+        //         key: 'Brand',
+        //         icon: 'el-icon-star-off',
+        //         url:'/elysBrand',
+        //       },
+        //       {
+        //         title: 'Category',
+        //         key: 'Category',
+        //         icon: 'el-icon-document-copy',
+        //         url:'/elysCategory',
+        //       },
+        //       {
+        //         title: 'City',
+        //         key: 'City',
+        //         icon: 'el-icon-map-location',
+        //         url:'/elysCity',
+        //       },
+        //       {
+        //         title: 'Order Status',
+        //         key: 'Order Status',
+        //         url: '/elysOrderStatus',
+        //         icon: 'el-icon-s-operation'
+        //       },
+        //       {
+        //         title: 'Warehouse',
+        //         key: 'Warehouse',
+        //         icon: 'el-icon-house',
+        //         url:'/elysWarehouse',
+        //       },
+        //   ],
+        // },
+      ]
 
       this.$api.get('/member', null, r => {
           var menu =
@@ -332,6 +405,7 @@
     },
     methods: {
       handleClick(e) {
+        // console.log("e=============",e)
         if (e.key === 'settings') {
           this.$store.commit('CHANGE_SETTING', {
             setting: 'isSettingsOpen',

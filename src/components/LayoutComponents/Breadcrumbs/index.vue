@@ -4,7 +4,7 @@
       <div class=" mr fl" style="margin-right:2rem;">
         <router-link to="/" class="text-muted">Home</router-link>
       </div>
-      <div class=" mr fl" style="margin-right:2rem;">
+      <!-- <div class=" mr fl" style="margin-right:2rem;">
         <router-link to="/realextate" class="text-muted">Real extate</router-link>
       </div>
       <div class=" mr fl" style="margin-right:2rem;">
@@ -12,7 +12,7 @@
       </div>
       <div class=" mr fl" style="margin-right:2rem;">
         <router-link to="/elevator" class="text-muted">Elevator</router-link>
-      </div>
+      </div> -->
       <template v-for="(item, index) in breadcrumb">
         <span v-if="index != 0" :key="index">
           <span :class="$style.arrow" class="text-muted"></span>
@@ -56,8 +56,13 @@ export default {
       const items = reduce(
         data,
         (result, entry) => {
+          // console.log("result",result)
+          // console.log("result.length",result.length)
+          // console.log("entry",entry)
+          // console.log("entry.children---------------------",entry.children)
           if (result.length) {
             return result
+            
           }
           if (entry.children) {
             const nested = this.getPath(entry.children, url, [entry].concat(parents))
@@ -71,15 +76,21 @@ export default {
         [],
       )
       this.activeItem = items[0]
+      console.log("items=======================",items)
       return items
     },
   },
   mounted: function () {
     this.breadcrumb = this.getPath(this.menuData, this.$route.path)
+    console.log("this.menuData",this.menuData)
+    // console.log("this.$route.path",this.$route.path)
+    // console.log("this.getPath(this.menuData, this.$route.path)",this.getPath(this.menuData, this.$route.path))
   },
   watch: {
     $route(to) {
       this.breadcrumb = this.getPath(this.menuData, to.path)
+      // console.log("to.path",to.path)
+      console.log("this.menuData2",this.menuData)
     },
   },
 }

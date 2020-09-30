@@ -1,4 +1,63 @@
 export const getLeftMenuData = [
+
+	//test
+	  {
+		icon: "el-icon-menu",
+		key: "elysDashboard",
+		title: "Home",
+		url: "/elysDashboard"
+	  },
+	  {
+		icon: "el-icon-menu",
+		key: "Vendor equipment management",
+		title: "Vendor equipment management",
+		children:[
+			{
+				icon: "el-icon-menu",
+				key: "real extate",
+				title: "Real extate",
+				url: "/realextate"
+			  },
+			  {
+				icon: "el-icon-menu",
+				key: "Building",
+				title: "Building",
+				url: "/building"
+			  },
+			  {
+				icon: "el-icon-menu",
+				key: "Elevator",
+				title: "Elevator",
+				url: "/elevator"
+			  },
+			  {
+				icon: "el-icon-menu",
+				key: "ElevatorButton",
+				title: "ElevatorButton",
+				url: "/elevatorButton"
+        },
+		]
+	  },
+	  {
+		icon: "el-icon-menu",
+		key: "filter",
+		title: "filter",
+		url: "/filter"
+	  },
+	//   {
+	// 	icon: "el-icon-menu",
+	// 	key: "print",
+	// 	title: "print",
+	// 	url: "/print"
+	//   },
+	  // {
+	  //   icon: "el-icon-menu",
+	  //   key: "Home",
+	  //   title: "Home",
+	  //   url: "/elysUserGroupActivity"
+	  // },
+	 
+	//test
 	//   {
 	//     title: 'Dashboard Alpha',
 	//     key: 'dashboardAlpha',
@@ -66,35 +125,35 @@ export const getLeftMenuData = [
 			// 	      pro: true,
 			// 	    },
 
-			{
-				title: 'Dashboard',
-				key: 'Dashboard',
-				url: '/Dashboard',
-				icon: 'el-icon-menu',
-			},
+			// {
+			// 	title: 'Dashboard',
+			// 	key: 'Dashboard',
+			// 	url: '/Dashboard',
+			// 	icon: 'el-icon-menu',
+			// },
 
-			{
-				title: 'Sales Order',
-				key: 'Sales Order',
-				// url: '/CustomerOrderManagement',
-				icon:'el-icon-s-order',
-				children: [
+			// {
+			// 	title: 'Sales Order',
+			// 	key: 'Sales Order',
+			// 	// url: '/CustomerOrderManagement',
+			// 	icon:'el-icon-s-order',
+			// 	children: [
 
-					{
-						title: 'Sales',
-						key: 'Sales',
-						url: '/CustomerOrderManagement',
-            icon:'el-icon-sell',
+			// 		{
+			// 			title: 'Sales',
+			// 			key: 'Sales',
+			// 			url: '/CustomerOrderManagement',
+            // icon:'el-icon-sell',
 
-					},
+			// 		},
 
-					{
-						title: 'Maintenance Order',
-						key: 'Maintenance Order',
-						url: '/CustomerOrderManagement_Maintenance',
-            icon:'el-icon-box',
+			// 		{
+			// 			title: 'Maintenance Order',
+			// 			key: 'Maintenance Order',
+			// 			url: '/CustomerOrderManagement_Maintenance',
+            // icon:'el-icon-box',
 
-					},
+			// 		},
 
 // 					{
 // 						title: 'Display Item',
@@ -103,141 +162,141 @@ export const getLeftMenuData = [
 //
 // 					},
 
-					{
-						title: 'Coupon Setting',
-						key: 'Coupon Setting',
-						url: '/CardTicketInformation',
-						icon: 'el-icon-s-ticket',
-						//
-					},
+		// 			{
+		// 				title: 'Coupon Setting',
+		// 				key: 'Coupon Setting',
+		// 				url: '/CardTicketInformation',
+		// 				icon: 'el-icon-s-ticket',
+		// 				//
+		// 			},
 
 
-				],
-			},
+		// 		],
+		// 	},
 
-			{
-				title: 'Factory Order',
-				key: 'Factory Order',
-				// url: '/factoryManagement',
-				icon:'el-icon-s-home',
-				children:[
+		// 	{
+		// 		title: 'Factory Order',
+		// 		key: 'Factory Order',
+		// 		// url: '/factoryManagement',
+		// 		icon:'el-icon-s-home',
+		// 		children:[
 
-					{
-						title: 'Orders',
-						key: 'Orders',
-						url: '/factoryManagement',
-            // url: '/factoryManagement?type=self',
-						icon: 'el-icon-tickets',
-					},
-					{
-						title: 'Factory Setting',
-						key: 'Factory Setting',
-						url: '/factoryList',
-						icon:'el-icon-set-up'
-					},
+		// 			{
+		// 				title: 'Orders',
+		// 				key: 'Orders',
+		// 				url: '/factoryManagement',
+        //     // url: '/factoryManagement?type=self',
+		// 				icon: 'el-icon-tickets',
+		// 			},
+		// 			{
+		// 				title: 'Factory Setting',
+		// 				key: 'Factory Setting',
+		// 				url: '/factoryList',
+		// 				icon:'el-icon-set-up'
+		// 			},
 
-				]
-				// pro: true,
-			},
+		// 		]
+		// 		// pro: true,
+		// 	},
 
-			{
-				title: 'Inventory',
-				key: 'Inventory',
-				icon: 'el-icon-house',
-				// url: '/purchase',
-				// pro: true,
+		// 	{
+		// 		title: 'Inventory',
+		// 		key: 'Inventory',
+		// 		icon: 'el-icon-house',
+		// 		// url: '/purchase',
+		// 		// pro: true,
 
-				children: [
+		// 		children: [
 
-					{
-						title: 'Gem Inventory',
-						key: 'Gem Inventory',
-						url: '/purchase',
-						icon: 'el-icon-s-goods',
-					},
+		// 			{
+		// 				title: 'Gem Inventory',
+		// 				key: 'Gem Inventory',
+		// 				url: '/purchase',
+		// 				icon: 'el-icon-s-goods',
+		// 			},
 
-					{
-						title: 'Product Inventory',
-						key: 'Product Inventory',
-						url: '/ProductList',
-						icon: 'el-icon-s-cooperation',
-					},
+		// 			{
+		// 				title: 'Product Inventory',
+		// 				key: 'Product Inventory',
+		// 				url: '/ProductList',
+		// 				icon: 'el-icon-s-cooperation',
+		// 			},
 
-					// {
-					// 	title: 'Consignment Inventory',
-					// 	key: 'Consignment Inventory',
-					// 	url: '/ProductList_Consignment',
-					// 	icon: 'el-icon-s-cooperation',
-					// },
-
-
-					{
-						title: 'Certified Gem Data',
-						key: 'Certified Gem Data',
-						url: '/gemList',
-						icon: 'el-icon-document',
-					},
-
-					{
-						title: 'Gem Type Setting',
-						key: 'Gem Type Setting',
-						url: '/gemType',
-						icon: 'el-icon-s-operation',
-
-					},
-
-					{
-						title: 'Product Cat. Setting',
-						key: 'Product Cat. Setting',
-						url: '/categoryLIist',
-						icon: 'el-icon-set-up',
-					},
-
-          {
-          	title: 'Ring Size Surcharge',
-          	key: 'Ring Size Surcharge',
-          	url: '/surcharge_group',
-          	icon: 'el-icon-edit-outline',
-          },
+		// 			// {
+		// 			// 	title: 'Consignment Inventory',
+		// 			// 	key: 'Consignment Inventory',
+		// 			// 	url: '/ProductList_Consignment',
+		// 			// 	icon: 'el-icon-s-cooperation',
+		// 			// },
 
 
+		// 			{
+		// 				title: 'Certified Gem Data',
+		// 				key: 'Certified Gem Data',
+		// 				url: '/gemList',
+		// 				icon: 'el-icon-document',
+		// 			},
 
-          // {
-          // 	title: 'Product Surcharge',
-          // 	key: 'Product Surcharge',
-          // 	url: '/product_surcharge',
-          // 	icon: 'el-icon-edit-outline',
-          // },
+		// 			{
+		// 				title: 'Gem Type Setting',
+		// 				key: 'Gem Type Setting',
+		// 				url: '/gemType',
+		// 				icon: 'el-icon-s-operation',
 
-          {
-          	title: 'Ring Surcharge',
-          	key: 'Ring Surcharge',
-          	url: '/product_surcharge_ring',
-          	icon: 'el-icon-edit-outline',
-          },
+		// 			},
+
+		// 			{
+		// 				title: 'Product Cat. Setting',
+		// 				key: 'Product Cat. Setting',
+		// 				url: '/categoryLIist',
+		// 				icon: 'el-icon-set-up',
+		// 			},
+
+        //   {
+        //   	title: 'Ring Size Surcharge',
+        //   	key: 'Ring Size Surcharge',
+        //   	url: '/surcharge_group',
+        //   	icon: 'el-icon-edit-outline',
+        //   },
 
 
 
+        //   // {
+        //   // 	title: 'Product Surcharge',
+        //   // 	key: 'Product Surcharge',
+        //   // 	url: '/product_surcharge',
+        //   // 	icon: 'el-icon-edit-outline',
+        //   // },
 
-					// {
-					// 	title: 'Jewelry design',
-					// 	key: 'JewelryDesign',
-					// 	url: '/JewelryDesign',
-					//
-					// },
-
-					// {
-					// 	title: 'finished product',
-					// 	key: 'CustomerList',
-					// 	url: '/CustomerList',
-					//
-					// },
-
+        //   {
+        //   	title: 'Ring Surcharge',
+        //   	key: 'Ring Surcharge',
+        //   	url: '/product_surcharge_ring',
+        //   	icon: 'el-icon-edit-outline',
+        //   },
 
 
-				],
 
-			},
+
+		// 			// {
+		// 			// 	title: 'Jewelry design',
+		// 			// 	key: 'JewelryDesign',
+		// 			// 	url: '/JewelryDesign',
+		// 			//
+		// 			// },
+
+		// 			// {
+		// 			// 	title: 'finished product',
+		// 			// 	key: 'CustomerList',
+		// 			// 	url: '/CustomerList',
+		// 			//
+		// 			// },
+
+
+
+		// 		],
+
+		// 	},
 
 
 
@@ -276,39 +335,39 @@ export const getLeftMenuData = [
 
 
 
-			{
-				title: 'CRM',
-				key: 'CRM',
-				icon:'el-icon-s-custom',
-				// url: '/invoiceManagement',
-				// pro: true,
-				children: [
+		// 	{
+		// 		title: 'CRM',
+		// 		key: 'CRM',
+		// 		icon:'el-icon-s-custom',
+		// 		// url: '/invoiceManagement',
+		// 		// pro: true,
+		// 		children: [
 
-					{
-						title: 'Customer Data',
-						key: 'Customer Data',
-						url: '/CustomersManagement',
-						icon:'el-icon-user-solid',
-					},
+		// 			{
+		// 				title: 'Customer Data',
+		// 				key: 'Customer Data',
+		// 				url: '/CustomersManagement',
+		// 				icon:'el-icon-user-solid',
+		// 			},
 
-					{
-						title: 'Customer Tier',
-						key: 'Customer Tier',
-						url: '/Kehu_Customer',
-						icon:'el-icon-sort',
-					},
+		// 			{
+		// 				title: 'Customer Tier',
+		// 				key: 'Customer Tier',
+		// 				url: '/Kehu_Customer',
+		// 				icon:'el-icon-sort',
+		// 			},
 
-          {
-          	title: 'Conversations',
-          	key: 'Conversations',
-          	url: '/Communicationlogs',
-            // url: '/Communicationlogs?type=isMenu',
-          	icon:'el-icon-chat-line-round',
-          },
+        //   {
+        //   	title: 'Conversations',
+        //   	key: 'Conversations',
+        //   	url: '/Communicationlogs',
+        //     // url: '/Communicationlogs?type=isMenu',
+        //   	icon:'el-icon-chat-line-round',
+        //   },
 
 
-				],
-			},
+		// 		],
+		// 	},
 
 
 // 			{
@@ -361,60 +420,58 @@ export const getLeftMenuData = [
 	//
 	// 	children: [
 
-			{
-				title: 'Accounting',
-				key: 'Accounting',
-				// url: '/DailyExpenditureinvoiceManagement',
-				icon:'el-icon-sell',
-				children: [
+			// {
+			// 	title: 'Accounting',
+			// 	key: 'Accounting',
+			// 	// url: '/DailyExpenditureinvoiceManagement',
+			// 	icon:'el-icon-sell',
+			// 	children: [
 
-					{
-						title: 'Invoice',
-						key: 'Invoice',
-						url: '/DailyExpenditureinvoiceManagement',
-						icon: 'el-icon-tickets',
-					},
+			// 		{
+			// 			title: 'Invoice',
+			// 			key: 'Invoice',
+			// 			url: '/DailyExpenditureinvoiceManagement',
+			// 			icon: 'el-icon-tickets',
+			// 		},
 
-					{
-						title: 'Supplier',
-						key: 'Supplier',
-						url: '/SupplierList',
-						icon: 'el-icon-s-shop',
-					},
-
-
+			// 		{
+			// 			title: 'Supplier',
+			// 			key: 'Supplier',
+			// 			url: '/SupplierList',
+			// 			icon: 'el-icon-s-shop',
+			// 		},
 
 
-				],
-			},
-
-			{
-				title: 'Staffs',
-				key: 'Staffs',
-				// url: '/DailyExpenditureinvoiceManagement',
-				icon: 'el-icon-user',
-				children: [
-
-					{
-						title: 'Staffs',
-						key: 'Staffs',
-						url: '/Permissions',
-						icon: 'el-icon-s-custom',
 
 
-					},
+			// 	],
+			// },
 
-					{
-						title: 'Group Setting',
-						key: 'Group Setting',
-						url: '/GroupManager',
-						icon: 'el-icon-s-platform',
-					},
+			// {
+			// 	title: 'Staffs',
+			// 	key: 'Staffs',
+			// 	// url: '/DailyExpenditureinvoiceManagement',
+			// 	icon: 'el-icon-user',
+			// 	children: [
 
-				],
-			},
+			// 		{
+			// 			title: 'Staffs',
+			// 			key: 'Staffs',
+			// 			url: '/Permissions',
+			// 			icon: 'el-icon-s-custom',
 
 
+			// 		},
+
+			// 		{
+			// 			title: 'Group Setting',
+			// 			key: 'Group Setting',
+			// 			url: '/GroupManager',
+			// 			icon: 'el-icon-s-platform',
+			// 		},
+
+			// 	],
+			// },
 
 
 
@@ -423,12 +480,14 @@ export const getLeftMenuData = [
 
 
 
-			{
-				title: 'Branch',
-				key: 'Branch',
-				url: '/branchManagement',
-				icon:'el-icon-s-shop'
-			},
+
+
+			// {
+			// 	title: 'Branch',
+			// 	key: 'Branch',
+			// 	url: '/branchManagement',
+			// 	icon:'el-icon-s-shop'
+			// },
 
 			// {
 			// 	title: 'Marketing Management',
@@ -477,50 +536,50 @@ export const getLeftMenuData = [
 
 
 
-			{
-				title: 'Miscellaneous',
-				key: 'Miscellaneous',
-				// url: '/errorManagement',
-				icon:'el-icon-warning',
-				children:[
+		// 	{
+		// 		title: 'Miscellaneous',
+		// 		key: 'Miscellaneous',
+		// 		// url: '/errorManagement',
+		// 		icon:'el-icon-warning',
+		// 		children:[
 
-					{
-						title: 'Order Status Setting',
-						key: 'Order Status Setting',
-						url: '/orderstatusManagement',
-						icon:'el-icon-set-up'
-					},
+		// 			{
+		// 				title: 'Order Status Setting',
+		// 				key: 'Order Status Setting',
+		// 				url: '/orderstatusManagement',
+		// 				icon:'el-icon-set-up'
+		// 			},
 
-          {
-          	title: 'Material Setting',
-          	key: 'Material Setting',
-          	url: '/materialManagement',
-          	icon:'el-icon-set-up'
-          },
+        //   {
+        //   	title: 'Material Setting',
+        //   	key: 'Material Setting',
+        //   	url: '/materialManagement',
+        //   	icon:'el-icon-set-up'
+        //   },
 
-          {
-          	title: 'Material Color Setting',
-          	key: 'Material Color Setting',
-          	url: '/materialManagement_Color',
-          	icon:'el-icon-set-up'
-          },
+        //   {
+        //   	title: 'Material Color Setting',
+        //   	key: 'Material Color Setting',
+        //   	url: '/materialManagement_Color',
+        //   	icon:'el-icon-set-up'
+        //   },
 
-          {
-          	title: 'Payment Method Setting',
-          	key: 'Payment Method Setting',
-          	url: '/materialManagement_PaymentMethod',
-          	icon:'el-icon-set-up'
-          },
-
-
+        //   {
+        //   	title: 'Payment Method Setting',
+        //   	key: 'Payment Method Setting',
+        //   	url: '/materialManagement_PaymentMethod',
+        //   	icon:'el-icon-set-up'
+        //   },
 
 
-					{
-						title: 'Crash Reports',
-						key: 'errorManagement',
-						url: '/errorManagement',
-						icon:'el-icon-warning'
-					},
+
+
+		// 			{
+		// 				title: 'Crash Reports',
+		// 				key: 'errorManagement',
+		// 				url: '/errorManagement',
+		// 				icon:'el-icon-warning'
+		// 			},
 
 			// 	]
 			// },
@@ -532,8 +591,8 @@ export const getLeftMenuData = [
 
 
 
-		],
-	},
+	// 	],
+	// },
 
 
 

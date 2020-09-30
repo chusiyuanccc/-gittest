@@ -11,22 +11,60 @@
                 class="demo-form-inline"
               >
                 <el-form-item style="float:left;">
-                  <h3>Building</h3>
+                  <h3>Filter</h3>
                 </el-form-item>
-                <el-form-item style='float: left;height: 40px;' class='search'>
+                <!-- <el-form-item style='float: left;height: 40px;' class='search'>
                   <el-input v-model="formInline.seek" placeholder="Name" style='margin-left: 15px;width: 256px;height: 40px;line-height: 40px;'></el-input>
+                </el-form-item> -->
+                <el-form-item style="float: left;height: 40px;" class="search">
+                  <el-select v-model="value1" placeholder="请选择">
+                    <el-option
+                      v-for="item in testList"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value"
+                    >
+                    </el-option>
+                  </el-select>
                 </el-form-item>
-                <el-form-item style='float:left;height: 35px;'>
-                  <el-button type="primary" @click="onSubmit" style='height:40px;border:0;padding: 0 10px;'>Search</el-button>
+                <el-form-item style="float: left;height: 40px;" class="search">
+                  <el-select v-model="value2" placeholder="请选择">
+                    <el-option
+                      v-for="item in testList"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value"
+                    >
+                    </el-option>
+                  </el-select>
                 </el-form-item>
-                <el-form-item style="float:right;">
+                <el-form-item style="float: left;height: 40px;" class="search">
+                  <el-select v-model="value3" placeholder="请选择">
+                    <el-option
+                      v-for="item in testList"
+                      :key="item.value"
+                      :label="item.label"
+                      :value="item.value"
+                    >
+                    </el-option>
+                  </el-select>
+                </el-form-item>
+                <el-form-item style="float:left;height: 35px;">
+                  <el-button
+                    type="primary"
+                    @click="onSubmit"
+                    style="height:40px;border:0;padding: 0 10px;"
+                    >Search</el-button
+                  >
+                </el-form-item>
+                <!-- <el-form-item style="float:right;">
                   <el-button
                     type="primary"
                     @click="expensecreate"
                     style="height:40px;padding: 0 10px;border:0;"
                     >New</el-button
                   >
-                </el-form-item>
+                </el-form-item> -->
               </el-form>
             </div>
           </div>
@@ -49,19 +87,25 @@
             <i class="el-icon-loading"></i>
             <span>Loading...</span>
           </template>
-          <el-table-column prop="id" label="ID" align="center" v-if= false>
+          <el-table-column prop="id" label="ID" align="center" v-if="false">
+          </el-table-column>
+          <el-table-column prop="name" label="Name" align="center">
+          </el-table-column>
+          <el-table-column prop="token" label="Device token" align="center">
           </el-table-column>
           <el-table-column
-            prop="building_name"
-            label="Building Name"
+            prop="cdk"
+            label="Device activation code"
             align="center"
           >
           </el-table-column>
           <el-table-column prop="Record" label="Remark" align="center">
           </el-table-column>
-          <el-table-column prop="Real_extate_id" label="Real Extate ID" align="center" v-if= false>
-          </el-table-column>
-          <el-table-column prop="floor" label="Floor" align="center">
+          <el-table-column
+            prop="building_id"
+            label="Building id"
+            align="center"
+          >
           </el-table-column>
           <el-table-column
             prop="Update_time"
@@ -102,57 +146,42 @@
         </el-table>
         <div>
           <el-dialog
-            :title="isNew ? 'Create building' : 'Change building'"
+            :title="isNew ? 'Create real extate' : 'Change real extate'"
             :visible.sync="dialogFormVisible"
           >
-            <el-form :model="form" status-icon ref="form">
+            <el-form :model="form">
               <el-form-item
                 label="ID"
                 :label-width="formLabelWidth"
-                v-if= false
+                v-if="false"
               >
-                <el-input
-                  v-model="form.id"
-                  autocomplete="off"
-                ></el-input>
+                <el-input v-model="form.id" autocomplete="off"></el-input>
+              </el-form-item>
+              <el-form-item label="Name" :label-width="formLabelWidth">
+                <el-input v-model="form.name" autocomplete="off"></el-input>
+              </el-form-item>
+              <el-form-item label="Device token" :label-width="formLabelWidth">
+                <el-input v-model="form.token" autocomplete="off"></el-input>
               </el-form-item>
               <el-form-item
-                label="Building Name"
+                label="Device activation code"
                 :label-width="formLabelWidth"
               >
-                <el-input
-                  size="mini"
-                  v-model="form.name"
-                  autocomplete="off"
-                ></el-input>
+                <el-input v-model="form.cdk" autocomplete="off"></el-input>
               </el-form-item>
               <el-form-item label="Remark" :label-width="formLabelWidth">
-                <el-input
-                  v-model="form.remark"
-                  autocomplete="off"
-                ></el-input>
+                <el-input v-model="form.remark" autocomplete="off"></el-input>
               </el-form-item>
-              <el-form-item 
-                label="Floor" 
-                :label-width="formLabelWidth" 
-                >
+              <el-form-item label="Building id" :label-width="formLabelWidth">
                 <el-input
-                  v-model="form.floor"
-                  autocomplete="off"
-                ></el-input>
-              </el-form-item>
-              <el-form-item label="Real Extate ID" :label-width="formLabelWidth"  v-if= false>
-                <el-input
-                  v-model="form.Real_extate_id"
+                  v-model="form.building_id"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
-              <el-button @click="dialogFormVisible=false">cancel</el-button>
-              <el-button type="primary" @click="confirm()"
-                >confirm</el-button
-              >
+              <el-button @click="dialogFormVisible = false">cancel</el-button>
+              <el-button type="primary" @click="confirm()">confirm</el-button>
             </div>
           </el-dialog>
         </div>
@@ -212,9 +241,35 @@
 
 <script>
 export default {
-  name: "building",
+  name: "elevator",
   data() {
     return {
+      testList: [
+        {
+          value: "选项1",
+          label: "黄金糕"
+        },
+        {
+          value: "选项2",
+          label: "双皮奶"
+        },
+        {
+          value: "选项3",
+          label: "蚵仔煎"
+        },
+        {
+          value: "选项4",
+          label: "龙须面"
+        },
+        {
+          value: "选项5",
+          label: "北京烤鸭"
+        }
+      ],
+      value1: "",
+      value2: "",
+      value3: "",
+
       show: false,
       titlebg: {
         background: "rgb(232,236,245)",
@@ -250,46 +305,41 @@ export default {
       form: {
         id: "",
         name: "",
+        token: "",
+        cdk: "",
         remark: "",
-        Real_extate_id: "",
-        floor: []
+        building_id: ""
       },
-      rules:{
-        floor:[
-          { required: true, message: 'floor is not null', trigger: 'blur'},
-          { type: 'number', message: 'floor is a number', trigger: 'blur'}
-        ]
-      },
-      formLabelWidth: "130px"
+      formLabelWidth: "170px"
     };
   },
   created: function() {
     //总数
-    // this.$api.get("/expense/count", null, r => {
-    //   this.totalElements = r;
-    // });
-    this.totalElements = 500;
+    this.$api.get("/expense/count", null, r => {
+      this.totalElements = r;
+    });
     //获取数据
     this.search();
   },
   methods: {
     //test
-    confirm(){
+    confirm() {
       //信息修改/新增后，提交this._data.form完成修改/新增
-      // console.log(this._data.form)
-      alert(JSON.stringify(this._data.form))
+      console.log(this._data.form);
+      alert(JSON.stringify(this.form));
       this._data.dialogFormVisible = false;
     },
     modify(res) {
       //修改按钮触发函数
-      this._data.isNew = false
+      this._data.isNew = false;
       this._data.dialogFormVisible = true;
       this._data.res = res;
       this.form.id = res.id;
-      this.form.name = res.building_name;
+      this.form.name = res.name;
+      this.form.token = res.token;
+      this.form.cdk = res.cdk;
       this.form.remark = res.Record;
-      this.form.Real_extate_id = res.Real_extate_id
-      this.form.floor = res.floor
+      this.form.building_id = res.building_id;
       // console.log(this._data.res);
       // console.log("2",this.res)
     },
@@ -300,10 +350,10 @@ export default {
     },
     expensecreate() {
       //新增按钮触发函数
-      this._data.isNew = true
-      this._data.res ={}
-      this.form ={}
-      this._data.dialogFormVisible =true
+      this._data.isNew = true;
+      this._data.res = {};
+      this.form = {};
+      this._data.dialogFormVisible = true;
     },
     cancel_detele() {
       //删除弹出框取消函数
@@ -312,6 +362,7 @@ export default {
     confirm_detele() {
       //删除弹出框确认函数，向后端传递id（this.dialogVisible_reference）
       this.dialogVisible = false;
+      alert(this.dialogVisible_reference);
       // this.$api.delete(
       //   "/expense/" + this.dialogVisible_reference + "/purge",
       //   null,
@@ -326,7 +377,7 @@ export default {
       this.loaing_table = false;
       this.tableData = [];
       // this.$api.get('/expense/'+(this.page01-1)+'/'+this.sum,null,r=> {
-      this.$api.get("building.json", null, r => {
+      this.$api.get("elevator.json", null, r => {
         for (let i = 0; i < r.length; i++) {
           r[i].formatted_date = new Date(r[i].date)
             .toLocaleDateString()
