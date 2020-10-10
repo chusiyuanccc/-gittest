@@ -51,28 +51,30 @@
           </template>
           <el-table-column prop="id" label="ID" align="center" v-if= false>
           </el-table-column>
+          <el-table-column prop="reference" label="ID" align="center" v-if= false>
+          </el-table-column>
           <el-table-column
             prop="name"
             label="Name"
             align="center"
           >
           </el-table-column>
-          <el-table-column prop="token" label="Device token" align="center">
+          <el-table-column prop="deviceToken" label="Device token" align="center">
           </el-table-column>
-          <el-table-column prop="cdk" label="Device activation code" align="center">
+          <el-table-column prop="deviceActivationCode" label="Device activation code" align="center">
           </el-table-column>
-          <el-table-column prop="Record" label="Remark" align="center">
+          <el-table-column prop="remarks" label="Remark" align="center">
           </el-table-column>
-          <el-table-column prop="building_id" label="Building id" align="center">
+          <el-table-column prop="elysNbuilding" label="Building id" align="center">
           </el-table-column>
           <el-table-column
-            prop="Update_time"
+            prop="revised"
             label="Update time"
             align="center"
           >
           </el-table-column>
           <el-table-column
-            prop="Create_time"
+            prop="made"
             label="Create time"
             align="center"
           >
@@ -81,11 +83,11 @@
             fixed="right"
             align="center"
             label="Action"
-            :min-width="190"
+            :min-width="280"
           >
             <template slot-scope="scope">
-              <!-- <el-button
-                @click="modify(scope.row)"
+              <el-button
+                @click="butSetting(scope.row.reference)"
                 type="danger"
                 size="small"
                 style="margin-right: 20px;"
@@ -99,7 +101,7 @@
                 style="margin-right: 20px;"
                 plain
                 >QR clone</el-button
-              > -->
+              >
               <el-button
                 @click="modify(scope.row)"
                 type="danger"
@@ -135,6 +137,16 @@
                 ></el-input>
               </el-form-item>
               <el-form-item
+                label="Reference"
+                :label-width="formLabelWidth"
+                v-if= false
+              >
+                <el-input
+                  v-model="form.reference"
+                  autocomplete="off"
+                ></el-input>
+              </el-form-item>
+              <el-form-item
                 label="Name"
                 :label-width="formLabelWidth"
               >
@@ -145,25 +157,25 @@
               </el-form-item>
               <el-form-item label="Device token" :label-width="formLabelWidth">
                 <el-input
-                  v-model="form.token"
+                  v-model="form.deviceToken"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
               <el-form-item label="Device activation code" :label-width="formLabelWidth">
                 <el-input
-                  v-model="form.cdk"
+                  v-model="form.deviceActivationCode"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
               <el-form-item label="Remark" :label-width="formLabelWidth">
                 <el-input
-                  v-model="form.remark"
+                  v-model="form.remarks"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
               <el-form-item label="Building id" :label-width="formLabelWidth">
                 <el-input
-                  v-model="form.building_id"
+                  v-model="form.elysNbuilding"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
@@ -256,7 +268,7 @@ export default {
       },
       value6: [],
       sum: 10,
-      totalElements: 0,
+      totalElements: 50,
       page01: 1,
       tableData: [],
       options: "",
@@ -269,11 +281,12 @@ export default {
       isNew: false,
       form: {
         id: "",
+        reference:"",
         name: "",
-        token: "",
-        cdk: "",
-        remark: "",
-        building_id: ""
+        deviceToken: "",
+        deviceActivationCode: "",
+        remarks: "",
+        elysNbuilding: ""
       },
       formLabelWidth: "170px"
     };
@@ -300,11 +313,12 @@ export default {
       this._data.dialogFormVisible = true;
       this._data.res = res;
       this.form.id = res.id;
+      this.form.reference = res.reference
       this.form.name = res.name
-      this.form.token = res.token
-      this.form.cdk = res.cdk
-      this.form.remark = res.Record
-      this.form.building_id = res.building_id
+      this.form.deviceToken = res.deviceToken
+      this.form.deviceActivationCode = res.deviceActivationCode
+      this.form.remarks = res.remarks
+      this.form.elysNbuilding = res.elysNbuilding
       // console.log(this._data.res);
       // console.log("2",this.res)
     },
@@ -319,6 +333,9 @@ export default {
       this._data.res ={}
       this.form ={}
       this._data.dialogFormVisible =true
+    },
+    butSetting(uuid){
+      this.$router.push("/buttonsetting?type=alert&uuid=" + uuid)
     },
     cancel_detele() {
       //删除弹出框取消函数
@@ -341,7 +358,7 @@ export default {
       //请求数据方法
       this.loaing_table = false;
       this.tableData = [];
-      // this.$api.get('/expense/'+(this.page01-1)+'/'+this.sum,null,r=> {
+      // this.$api.get('/elevator/'+(this.page01-1)+'/'+this.sum,null,r=> {
       this.$api.get("elevator.json", null, r => {
         for (let i = 0; i < r.length; i++) {
           r[i].formatted_date = new Date(r[i].date)

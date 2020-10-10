@@ -89,7 +89,7 @@
 		      title: "Vendor",
 		      children:[
 			  {
-				icon: "el-icon-menu",
+				icon: "icmn-clubs",
 				key: "real extate",
 				title: "Real extate",
 				url: "/realextate"

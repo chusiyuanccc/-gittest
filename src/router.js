@@ -237,6 +237,10 @@ const router = new Router({
 							path: '/print',
 							component: () => import('./views/test/print'),
 						},
+						{
+							path: '/buttonsetting',
+							component: () => import('./views/test/buttonsetting'),
+						},
 			],
 		},
 

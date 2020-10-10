@@ -2,7 +2,7 @@
     [
         {
             "id":"1",
-            "building_name":"鱼木小区一栋",
+            "name":"鱼木小区一栋",
             "Record":"这是一个备注",
             "Real_extate_id": 4,
             "floor": 33,
@@ -11,7 +11,7 @@
         },
         {
             "id":"2",
-            "building_name":"鱼木小区二栋",
+            "name":"鱼木小区二栋",
             "Record":"这是一个备注",
             "Real_extate_id": 4,
             "floor": 28,
@@ -20,7 +20,7 @@
         },
         {
             "id":"3",
-            "building_name":"鱼木小区三栋",
+            "name":"鱼木小区三栋",
             "Record":"这是一个备注",
             "Real_extate_id": 4,
             "floor": 45,
@@ -29,7 +29,7 @@
         },
         {
             "id":"4",
-            "building_name":"天源大厦一栋",
+            "name":"天源大厦一栋",
             "Record":"这是一个备注",
             "Real_extate_id": 5,
             "floor": 38,
@@ -38,7 +38,7 @@
         },
         {
             "id":"5",
-            "building_name":"天源大厦二栋",
+            "name":"天源大厦二栋",
             "Record":"这是一个备注",
             "Real_extate_id": 5,
             "floor": 22,
@@ -47,7 +47,7 @@
         },
         {
             "id":"6",
-            "building_name":"鱼木小区一栋",
+            "name":"鱼木小区一栋",
             "Record":"这是一个备注",
             "Real_extate_id": 4,
             "floor": 33,
@@ -56,7 +56,7 @@
         },
         {
             "id":"7",
-            "building_name":"鱼木小区二栋",
+            "name":"鱼木小区二栋",
             "Record":"这是一个备注",
             "Real_extate_id": 4,
             "floor": 28,
@@ -65,7 +65,7 @@
         },
         {
             "id":"8",
-            "building_name":"鱼木小区三栋",
+            "name":"鱼木小区三栋",
             "Record":"这是一个备注",
             "Real_extate_id": 4,
             "floor": 45,
@@ -74,7 +74,7 @@
         },
         {
             "id":"9",
-            "building_name":"天源大厦一栋",
+            "name":"天源大厦一栋",
             "Record":"这是一个备注",
             "Real_extate_id": 5,
             "floor": 38,
@@ -83,7 +83,7 @@
         },
         {
             "id":"10",
-            "building_name":"天源大厦二栋",
+            "name":"天源大厦二栋",
             "Record":"这是一个备注",
             "Real_extate_id": 5,
             "floor": 22,

@@ -51,26 +51,28 @@
           </template>
           <el-table-column prop="id" label="ID" align="center" v-if= false>
           </el-table-column>
+          <el-table-column prop="reference" label="Reference" align="center" v-if= false>
+          </el-table-column>
           <el-table-column
-            prop="building_name"
+            prop="name"
             label="Building Name"
             align="center"
           >
           </el-table-column>
-          <el-table-column prop="Record" label="Remark" align="center">
+          <el-table-column prop="remarks" label="Remark" align="center">
           </el-table-column>
-          <el-table-column prop="Real_extate_id" label="Real Extate ID" align="center" v-if= false>
+          <el-table-column prop="elys_nreal_extate" label="Real Extate ID" align="center" v-if= false>
           </el-table-column>
-          <el-table-column prop="floor" label="Floor" align="center">
+          <el-table-column prop="floor_number" label="Floor" align="center">
           </el-table-column>
           <el-table-column
-            prop="Update_time"
+            prop="revised"
             label="Update time"
             align="center"
           >
           </el-table-column>
           <el-table-column
-            prop="Create_time"
+            prop="made"
             label="Create time"
             align="center"
           >
@@ -117,6 +119,16 @@
                 ></el-input>
               </el-form-item>
               <el-form-item
+                label="Reference"
+                :label-width="formLabelWidth"
+                v-if= false
+              >
+                <el-input
+                  v-model="form.reference"
+                  autocomplete="off"
+                ></el-input>
+              </el-form-item>
+              <el-form-item
                 label="Building Name"
                 :label-width="formLabelWidth"
               >
@@ -128,7 +140,7 @@
               </el-form-item>
               <el-form-item label="Remark" :label-width="formLabelWidth">
                 <el-input
-                  v-model="form.remark"
+                  v-model="form.remarks"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
@@ -137,13 +149,13 @@
                 :label-width="formLabelWidth" 
                 >
                 <el-input
-                  v-model="form.floor"
+                  v-model="form.floor_number"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
               <el-form-item label="Real Extate ID" :label-width="formLabelWidth"  v-if= false>
                 <el-input
-                  v-model="form.Real_extate_id"
+                  v-model="form.elys_nreal_extate"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
@@ -249,10 +261,11 @@ export default {
       isNew: false,
       form: {
         id: "",
+        reference: "",
         name: "",
-        remark: "",
-        Real_extate_id: "",
-        floor: []
+        remarks: "",
+        elys_nreal_extate: "",
+        floor_number: []
       },
       rules:{
         floor:[
@@ -286,10 +299,11 @@ export default {
       this._data.dialogFormVisible = true;
       this._data.res = res;
       this.form.id = res.id;
-      this.form.name = res.building_name;
-      this.form.remark = res.Record;
-      this.form.Real_extate_id = res.Real_extate_id
-      this.form.floor = res.floor
+      this.form.reference = res.reference
+      this.form.name = res.name;
+      this.form.remarks = res.remarks;
+      this.form.elys_nreal_extate = res.elys_nreal_extate
+      this.form.floor_number = res.floor_number
       // console.log(this._data.res);
       // console.log("2",this.res)
     },
@@ -325,7 +339,7 @@ export default {
       //请求数据方法
       this.loaing_table = false;
       this.tableData = [];
-      // this.$api.get('/expense/'+(this.page01-1)+'/'+this.sum,null,r=> {
+      // this.$api.get('/building/'+(this.page01-1)+'/'+this.sum,null,r=> {
       this.$api.get("building.json", null, r => {
         for (let i = 0; i < r.length; i++) {
           r[i].formatted_date = new Date(r[i].date)

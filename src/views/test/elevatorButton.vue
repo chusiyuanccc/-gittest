@@ -51,6 +51,8 @@
           </template>
           <el-table-column prop="id" label="ID" align="center" v-if= false>
           </el-table-column>
+          <el-table-column prop="reference" label="Reference" align="center" v-if= false>
+          </el-table-column>
           <el-table-column
             prop="building_name"
             label="Building Name"
