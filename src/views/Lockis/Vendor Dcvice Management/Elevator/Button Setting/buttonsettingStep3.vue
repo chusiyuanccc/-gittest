@@ -23,8 +23,6 @@
   </div>
 </template>
 
-
-
 <script>
 export default {
   name: 'elysExpenseCreate',
