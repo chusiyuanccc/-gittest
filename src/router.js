@@ -215,15 +215,15 @@ const router = new Router({
 						//test
 						{
 							path: '/realextate',
-							component: () => import('./views/test/realextate'),
+							component: () => import('./views/Lockis/Vendor Dcvice Management/Real Extate/realextate'),
 						},
 						{
 							path: '/building',
-							component: () => import('./views/test/building'),
+							component: () => import('./views/Lockis/Vendor Dcvice Management/Building/building'),
 						},
 						{
 							path: '/elevator',
-							component: () => import('./views/test/elevator'),
+							component: () => import('./views/Lockis/Vendor Dcvice Management/Elevator/elevator'),
 						},
 						{
 							path: '/filter',
@@ -239,7 +239,15 @@ const router = new Router({
 						},
 						{
 							path: '/buttonsetting',
-							component: () => import('./views/test/buttonsetting'),
+							component: () => import('./views/Lockis/Vendor Dcvice Management/Elevator/Button Setting/buttonsetting'),
+						},
+						{
+							path: '/buttonsettingStep2',
+							component: () => import('./views/Lockis/Vendor Dcvice Management/Elevator/Button Setting/buttonsettingStep2'),
+						},
+						{
+							path: '/buttonsettingStep3',
+							component: () => import('./views/Lockis/Vendor Dcvice Management/Elevator/Button Setting/buttonsettingStep3'),
 						},
 			],
 		},

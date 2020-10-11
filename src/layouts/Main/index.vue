@@ -45,7 +45,9 @@
       <cui-breadcrumbs :settings="settings"/>
       <a-layout-content>
         <div class="utils__content">
+          <keep-alive>
           <router-view/>
+          </keep-alive>>
         </div>
       </a-layout-content>
       <a-layout-footer>

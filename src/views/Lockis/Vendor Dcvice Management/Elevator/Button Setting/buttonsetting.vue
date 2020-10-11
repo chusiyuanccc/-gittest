@@ -181,7 +181,7 @@
       </div>
     </div>
     <div style=" background: white;padding: 10px 50px; border-radius: 10px;" class="bottom">
-      <button style="background-color:#0977ce">Next</button>
+      <button style="background-color:#0977ce" @click="next">Next</button>
       <button style="background-color:#f46c6c">Return</button>
     </div>
   </div>
@@ -213,6 +213,7 @@ export default {
       isSingle: "1",
       buttonList: [],
       buttonList_:[],
+      List:{},
       active: 0,
       
       
@@ -326,7 +327,7 @@ export default {
       }
     },
     change_(){
-      this.buttonList_=[]
+      this.buttonList_= []
       for(let i = this.min;i>0;i--){
         this.buttonList_.push({
             index: -i,
@@ -336,6 +337,27 @@ export default {
     },
     click(index) {
       this.buttonList[index].isSelect = !this.buttonList[index].isSelect;
+    },
+    next(){
+      this.List = {
+        buttonList:[],
+        min:this.min,
+        max:this.max,
+        isAll:this.isAll,
+        isSingle:this.isSingle
+      }
+      for(let i=0;i<this.buttonList_.length;i++){
+        if(this.buttonList_[i].isSelect){
+          this.List.buttonList.push(this.buttonList_[i].index)
+        }
+      }
+      for(let i=0;i<this.buttonList.length;i++){
+        if(this.buttonList[i].isSelect){
+          this.List.buttonList.push(this.buttonList[i].index)
+        }
+      }
+      // alert(JSON.stringify(this.List))
+      this.$router.push('/buttonsettingStep2?list='+JSON.stringify(this.List))
     },
     handleRemove(file) {
       console.log(file);

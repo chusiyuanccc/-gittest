@@ -85,8 +85,8 @@
         },
         {
 		      icon: "el-icon-menu",
-	      	key: "Vendor",
-		      title: "Vendor",
+	      	key: "Vendor Dcvice Management",
+		      title: "Vendor Dcvice Management",
 		      children:[
 			  {
 				icon: "icmn-clubs",
@@ -106,20 +106,32 @@
 				title: "Elevator",
 				url: "/elevator"
         },
+        // {
+				// icon: "el-icon-menu",
+				// key: "ElevatorButton",
+				// title: "ElevatorButton",
+				// url: "/elevatorButton"
+        // },
         {
 				icon: "el-icon-menu",
-				key: "ElevatorButton",
-				title: "ElevatorButton",
-				url: "/elevatorButton"
+				key: "Mobile Devices",
+				title: "Mobile Devices",
+				url: "/mobileDevices"
+        },
+        {
+				icon: "el-icon-menu",
+				key: "System Setting",
+				title: "System Setting",
+				url: "/systemSetting"
         },
 		    ]
         },
-        {
-          icon: "el-icon-menu",
-          key: "filter",
-          title: "filter",
-          url: "/filter"
-        },
+        // {
+        //   icon: "el-icon-menu",
+        //   key: "filter",
+        //   title: "filter",
+        //   url: "/filter"
+        // },
         // {
 		    // icon: "el-icon-menu",
 		    // key: "print",
