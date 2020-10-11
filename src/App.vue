@@ -12,7 +12,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'app',
 
-  //test
+  //test 测试
 	// // created: function() {
 	//
 	//
