@@ -245,75 +245,75 @@
 
 <script>
 export default {
-  name: "elevator",
+  name: 'elevator',
   data() {
     return {
       show: false,
       titlebg: {
-        background: "rgb(232,236,245)",
-        color: "black"
+        background: 'rgb(232,236,245)',
+        color: 'black',
       },
       dialogVisible: false,
       dialogVisibles: false,
       dialogVisible_group: false,
 
-      dialogVisible_reference: "",
+      dialogVisible_reference: '',
 
       loaing_table: false,
-      value1: "",
-      test: "010101",
+      value1: '',
+      test: '010101',
       formInline: {
-        search: "",
-        num: "6",
-        seek: ""
+        search: '',
+        num: '6',
+        seek: '',
       },
       value6: [],
       sum: 10,
       totalElements: 50,
       page01: 1,
       tableData: [],
-      options: "",
+      options: '',
       options_list: [],
-      member_reference: "",
+      member_reference: '',
 
-      //dialog
+      // dialog
       res: {},
       dialogFormVisible: false,
       isNew: false,
       form: {
-        id: "",
-        reference:"",
-        name: "",
-        deviceToken: "",
-        deviceActivationCode: "",
-        remarks: "",
-        elysNbuilding: ""
+        id: '',
+        reference: '',
+        name: '',
+        deviceToken: '',
+        deviceActivationCode: '',
+        remarks: '',
+        elysNbuilding: '',
       },
-      formLabelWidth: "170px"
-    };
+      formLabelWidth: '170px',
+    }
   },
   created: function() {
-    //总数
-    this.$api.get("/expense/count", null, r => {
-      this.totalElements = r;
-    });
-    //获取数据
-    this.search();
+    // 总数
+    this.$api.get('/expense/count', null, r => {
+      this.totalElements = r
+    })
+    // 获取数据
+    this.search()
   },
   methods: {
-    //test
-    confirm(){
-      //信息修改/新增后，提交this._data.form完成修改/新增
+    // test
+    confirm() {
+      // 信息修改/新增后，提交this._data.form完成修改/新增
       console.log(this._data.form)
       alert(JSON.stringify(this.form))
-      this._data.dialogFormVisible = false;
+      this._data.dialogFormVisible = false
     },
     modify(res) {
-      //修改按钮触发函数
+      // 修改按钮触发函数
       this._data.isNew = false
-      this._data.dialogFormVisible = true;
-      this._data.res = res;
-      this.form.id = res.id;
+      this._data.dialogFormVisible = true
+      this._data.res = res
+      this.form.id = res.id
       this.form.reference = res.reference
       this.form.name = res.name
       this.form.deviceToken = res.deviceToken
@@ -324,27 +324,27 @@ export default {
       // console.log("2",this.res)
     },
     detele(reference) {
-      //删除按钮触发函数
-      this.dialogVisible = true;
-      this.dialogVisible_reference = reference;
+      // 删除按钮触发函数
+      this.dialogVisible = true
+      this.dialogVisible_reference = reference
     },
     expensecreate() {
-      //新增按钮触发函数
+      // 新增按钮触发函数
       this._data.isNew = true
-      this._data.res ={}
-      this.form ={}
-      this._data.dialogFormVisible =true
+      this._data.res = {}
+      this.form = {}
+      this._data.dialogFormVisible = true
     },
-    butSetting(uuid){
-      this.$router.push("/buttonsetting?type=alert&uuid=" + uuid)
+    butSetting(uuid) {
+      this.$router.push('/buttonsetting?type=alert&uuid=' + uuid)
     },
     cancel_detele() {
-      //删除弹出框取消函数
-      this.dialogVisible = false;
+      // 删除弹出框取消函数
+      this.dialogVisible = false
     },
     confirm_detele() {
-      //删除弹出框确认函数，向后端传递id（this.dialogVisible_reference）
-      this.dialogVisible = false;
+      // 删除弹出框确认函数，向后端传递id（this.dialogVisible_reference）
+      this.dialogVisible = false
       alert(this.dialogVisible_reference)
       // this.$api.delete(
       //   "/expense/" + this.dialogVisible_reference + "/purge",
@@ -356,103 +356,103 @@ export default {
       // console.log(this.dialogVisible_reference)
     },
     search() {
-      //请求数据方法
-      this.loaing_table = false;
-      this.tableData = [];
+      // 请求数据方法
+      this.loaing_table = false
+      this.tableData = []
       // this.$api.get('/elevator/'+(this.page01-1)+'/'+this.sum,null,r=> {
-      this.$api.get("elevator.json", null, r => {
+      this.$api.get('elevator.json', null, r => {
         for (let i = 0; i < r.length; i++) {
           r[i].formatted_date = new Date(r[i].date)
             .toLocaleDateString()
-            .split("/")
-            .join("-");
+            .split('/')
+            .join('-')
         }
-        this.tableData = r;
-        console.log(this.tableData);
-      });
+        this.tableData = r
+        console.log(this.tableData)
+      })
     },
-    //test
+    // test
     indexMethod(index) {
-      return (parseInt(this.page01) - 1) * 10 + index + 1;
+      return (parseInt(this.page01) - 1) * 10 + index + 1
     },
     confirm_state() {
       this.$api.put(
-        "/expense" +
+        '/expense' +
           this.member_reference +
-          "/group/" +
+          '/group/' +
           this.options +
-          "/assign",
+          '/assign',
         null,
         r => {
-          this.search();
-          this.dialogVisible_group = false;
-        }
-      );
+          this.search()
+          this.dialogVisible_group = false
+        },
+      )
     },
     cancel_state() {
-      this.dialogVisible_group = false;
+      this.dialogVisible_group = false
     },
 
     assign(uuid) {
-      this.dialogVisible_group = true;
-      this.member_reference = uuid;
+      this.dialogVisible_group = true
+      this.member_reference = uuid
     },
 
     handleClose(done) {
-      this.dialogVisible = false;
+      this.dialogVisible = false
     },
     handleClose(done) {
-      this.dialogVisibles = false;
+      this.dialogVisibles = false
     },
 
     handleClose_group() {
-      this.dialogVisible_group = false;
+      this.dialogVisible_group = false
     },
     onSubmit() {
-      this.page01 = 1;
-      this.search();
+      this.page01 = 1
+      this.search()
     },
     lock(id) {
-      this.dialogVisibles = true;
-      this.statusid = id;
+      this.dialogVisibles = true
+      this.statusid = id
     },
     suoding_queren() {
-      this.dialogVisibles = false;
-      this.$api.get("/Design/onLock/" + this.statusid, null, r => {
-        this.search();
-      });
+      this.dialogVisibles = false
+      this.$api.get('/Design/onLock/' + this.statusid, null, r => {
+        this.search()
+      })
     },
     suoding_quxiao() {
-      this.dialogVisibles = false;
+      this.dialogVisibles = false
     },
     pages02(val) {
-      this.page01 = val;
-      this.search();
+      this.page01 = val
+      this.search()
     },
     return_guest() {
-      this.$router.push("/CustomerOrderManagement");
+      this.$router.push('/CustomerOrderManagement')
     },
     details(uuid) {
-      this.$router.push("/Add_Permission?uuid=" + uuid);
+      this.$router.push('/Add_Permission?uuid=' + uuid)
     },
     chengping() {
-      this.$router.push("/SystemManagement/CustomerList");
+      this.$router.push('/SystemManagement/CustomerList')
     },
     topage(type) {
-      if (type == "user") {
-        this.$router.push("/SystemManagement/CustomerOrderManagement");
-      } else if (type == "branch") {
-        this.$router.push("/SystemManagement/CustomerList");
+      if (type == 'user') {
+        this.$router.push('/SystemManagement/CustomerOrderManagement')
+      } else if (type == 'branch') {
+        this.$router.push('/SystemManagement/CustomerList')
       }
     },
     detail(uuid) {
-      this.$router.push("/elysExpenseCreate?type=detail&uuid=" + uuid);
+      this.$router.push('/elysExpenseCreate?type=detail&uuid=' + uuid)
     },
     alert(res) {
       // alert(JSON.stringify(res))
-    }
-  }
-};
+    },
+  },
+}
 </script>
 
 <style lang="scss">
